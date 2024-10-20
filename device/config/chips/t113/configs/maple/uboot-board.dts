@@ -28,7 +28,7 @@
 	pinctrl-0 = <&s_twi0_pins_a>;
 	no_suspend = <1>;
 	twi_drv_used = <1>;
-	status = "okay";
+	status = "disabled";
 };
 
 &rgb18_pins_a {
@@ -374,45 +374,34 @@
 	lcd_hv_if = <0>;
 		
 	/* part 3 */
-        lcd_x               = <1024>;
-        lcd_y               = <600>;
-        lcd_width           = <154>;
-        lcd_height          = <85>;
-        lcd_dclk_freq       = <51>;
-        lcd_hbp             = <140>;
-        lcd_ht              = <1344>;
-        lcd_hspw            = <20>;
-        lcd_vbp             = <20>;
-        lcd_vt              = <635>;
-        lcd_vspw            = <3>;
+        lcd_x               = <480>;
+        lcd_y               = <854>;
+        lcd_width           = <62>;
+        lcd_height          = <110>;
+        lcd_dclk_freq       = <27>;
+        lcd_hbp             = <45>;
+        lcd_ht              = <533>;
+        lcd_hspw            = <2>;
+        lcd_vbp             = <52>;
+        lcd_vt              = <910>;
+        lcd_vspw            = <10>;
 		
 	lcd_pwm_used        = <1>;
-	lcd_pwm_ch          = <7>;
-	lcd_pwm_freq        = <500>;
+	lcd_pwm_ch          = <4>;
+	lcd_pwm_freq        = <40000>;
 	lcd_pwm_pol         = <1>;
 
 	/* part 5 */
-	lcd_frm = <1>;
+	lcd_frm = <0>;
 	lcd_io_phase = <0x0000>;
 	lcd_gamma_en = <0>;
 	lcd_cmap_en = <0>;
 	lcd_hv_clk_phase = <0>;
 	lcd_hv_sync_polarity= <0>;
 
-	// reset
-	lcd_gpio_0 = <&pio PB 4 GPIO_ACTIVE_HIGH>;
-	// cs
-	lcd_gpio_1 = <&pio PB 7 GPIO_ACTIVE_HIGH>;
-	// sda
-	lcd_gpio_2 = <&pio PB 5 GPIO_ACTIVE_HIGH>;
-	// sck
-	lcd_gpio_3 = <&pio PB 6 GPIO_ACTIVE_HIGH>;
-	//bl
-    lcd_gpio_4 = <&pio PD 22 GPIO_ACTIVE_HIGH>;
-				
 	/* part 6 */
-	lcd_power = "vcc-lcd";
-	lcd_pin_power = "vcc-pd";
+/*	lcd_power = "vcc-lcd";*/
+/*	lcd_pin_power = "vcc-pd";*/
 	pinctrl-0 = <&rgb18_pins_a>;
 	pinctrl-1 = <&rgb18_pins_b>;
 };
